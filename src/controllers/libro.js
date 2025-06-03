@@ -1,5 +1,6 @@
 const { response, request } = require('express');
 const libro = require('../models/libro');
+const Categoria = require('../models/categoria');
 
 const libros = [];
 
@@ -20,6 +21,7 @@ const createLibro = async (req, res) => {
     const { isbn, autor, editorial, genero, titulo, sinopsis, portada, promedio_calificaciones, fecha_publicacion, numero_paginas } = req.body;
 
     const usuario = req.activeUser;
+    console.log(genero);
 
     if (!usuario) {
         return res.status(401).json({ msg: "Usuario no autenticado" });
@@ -70,10 +72,26 @@ const getLibros = async (req = request, res = response) => {
 };
 
 const getLibrosPorCategoria = async (req, res) => {
-    const { id } = req.params;
-    const libros = await libro.find({ genero: id });
+  try {
+    const { nombre } = req.params;
+
+    // Buscar la categoría por nombre
+    
+    const categoria = await Categoria.findOne({ genero: nombre });
+
+    if (!categoria) {
+      return res.status(404).json({ mensaje: "Categoría no encontrada" });
+    }
+
+    // Buscar los libros que tengan esa categoría
+    const libros = await libro.find({ genero: categoria._id });
+
     res.json(libros);
-}
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ mensaje: "Error al obtener los libros por categoría" });
+  }
+};
 
 
 

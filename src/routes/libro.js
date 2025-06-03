@@ -9,7 +9,7 @@ router.get("/", getLibros);
 
 router.get("/:id", getLibro);
 
-router.get("/categoria/:id", getLibrosPorCategoria);
+router.get("/categoria/:nombre", getLibrosPorCategoria);
 
 router.post("/", [validateJWT,verifyAdminRole], createLibro);
 

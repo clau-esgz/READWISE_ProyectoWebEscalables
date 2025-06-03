@@ -27,7 +27,7 @@ export class FormLibro implements OnInit, OnChanges {
     ISBN: '',
     autor: '',
     editorial: '',
-    categoria: '',
+    genero: '',
     titulo: '',
     sinopsis: '',
     portada: '',
@@ -62,7 +62,7 @@ export class FormLibro implements OnInit, OnChanges {
         ...this.formData,
         autor: this.libroData.autor || '',
         editorial: this.libroData.editorial || '',
-        categoria: this.libroData.categoria || '',
+        genero: this.libroData.categoria || '',
         titulo: this.libroData.titulo || ''
       };
     }
@@ -73,7 +73,7 @@ export class FormLibro implements OnInit, OnChanges {
       this.formData.ISBN.trim() &&
       this.formData.autor &&
       this.formData.editorial.trim() &&
-      this.formData.categoria.trim() &&
+      this.formData.genero.trim() &&
       this.formData.titulo.trim() &&
       this.formData.numero_paginas &&
       this.formData.sinopsis.trim() &&

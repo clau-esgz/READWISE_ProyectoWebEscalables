@@ -35,11 +35,12 @@ export class VerCategoriaComponent implements OnInit {
   ngOnInit() {
     this.genero = this.route.snapshot.paramMap.get('genero') || '';
     if (this.genero) {
+      console.log('Genero recibido:', this.genero);
       this.categoriaService.getCategoriaPorNombre(this.genero).subscribe(categoria => {
         this.categoriaDetalle = categoria;
         if(this.categoriaDetalle){
           console.log(this.categoriaDetalle._id);
-          this.libroService.getLibrosPorCategoria(this.categoriaDetalle._id).subscribe(libros => {
+          this.libroService.getLibrosPorCategoria(this.genero).subscribe(libros => {
             console.log(libros);
             this.libros = libros;
           });

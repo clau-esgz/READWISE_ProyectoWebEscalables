@@ -37,7 +37,7 @@
       <div class="form-group">
         <label for="genero">Género</label>
         <select id="genero" name="genero" class="form-libro-input"
-                [(ngModel)]="formData.categoria" required #genero="ngModel" >
+                [(ngModel)]="formData.genero" required #genero="ngModel" >
           <option value="" disabled selected>Selecciona un género</option>
           <option *ngFor="let cat of categorias" [value]="cat._id">{{cat.genero}}</option>
         </select>
