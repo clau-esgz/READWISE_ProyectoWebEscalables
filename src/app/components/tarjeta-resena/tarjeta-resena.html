@@ -1,0 +1,84 @@
+<div class="tarjeta-resena">
+  <div *ngIf="!resenaExistente || isEditing" class="formulario-resena">
+    <h3>{{ resenaExistente ? 'Editar Reseña' : 'Escribir Reseña' }}</h3>
+    
+    <div class="calificacion">
+      <span>Calificación:</span>
+      <div class="estrellas">
+        <span *ngFor="let i of [1,2,3,4,5]" 
+              class="estrella" 
+              [class.activa]="i <= calificacion"
+              (click)="setCalificacion(i)">
+          {{ i <= calificacion ? '★' : '☆' }}
+        </span>
+      </div>
+    </div>
+
+    <div class="contenido">
+      <label for="contenido">Tu reseña:</label>
+      <textarea 
+        id="contenido"
+        [(ngModel)]="contenido"
+        rows="4"
+        placeholder="Escribe tu opinión sobre el libro..."
+       >
+      </textarea>
+    </div>
+
+    <div class="acciones">
+      <button *ngIf="resenaExistente" 
+              (click)="toggleEdicion()" 
+              class="btn-secundario">
+        {{ isEditing ? 'Cancelar' : 'Editar' }}
+      </button>
+      <button (click)="guardarResena()" 
+              class="btn-primario"
+              [disabled]="!calificacion || !contenido.trim()">
+        {{ resenaExistente ? 'Actualizar' : 'Publicar' }}
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="resenaExistente && !isEditing" class="resena-existente">
+    <label for="contenido">Tu reseña:</label>
+    <div class="calificacion">
+      <span *ngFor="let star of getStars(resenaExistente.calificacion)" 
+            class="estrella">
+        {{ star }}
+      </span>
+      <span class="numero-calificacion">
+        ({{ resenaExistente.calificacion }}/5)
+      </span>
+    </div>
+    <div class="contenido">
+      {{ resenaExistente.contenido }}
+    </div>
+    <div class="fecha">
+      {{ resenaExistente.fecha | date:'dd/MM/yyyy' }}
+    </div>
+  </div>
+
+  <div class="todas-resenas">
+    <h3>Reseñas de otros lectores</h3>
+    <div *ngFor="let resena of resenas" class="resena-existente">
+      <div class="usuario">
+        <span class="correo">{{ resena.usuario.correo }}</span>
+      </div>
+      <div class="calificacion">
+        <span *ngFor="let star of getStars(resena.calificacion)" 
+              class="estrella">
+          {{ star }}
+        </span>
+        <span class="numero-calificacion">
+          ({{ resena.calificacion }}/5)
+        </span>
+      </div>
+      <div class="contenido">
+        {{ resena.contenido }}
+      </div>
+      <div class="fecha">
+        {{ resena.fecha | date:'dd/MM/yyyy' }}
+      </div>
+    </div>
+  </div>
+</div>

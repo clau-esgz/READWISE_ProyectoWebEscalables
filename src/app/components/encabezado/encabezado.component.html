@@ -1,0 +1,24 @@
+<div *ngIf="mensaje" [ngClass]="mensajeTipo === 'success' ? 'mensaje-exito' : 'mensaje-error'">
+  {{ mensaje }}
+</div>
+<div class="header">
+  <img class = logo  src="assets/logo.png" alt="Readwise" class="logo" (click)="navigateToHome()">
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Buscar libros..."
+      class="search"
+      [(ngModel)]="termino">
+    <button class="search-btn" (click)="onBuscar()">
+      <span class="material-icons">search</span>
+    </button>
+  </div>
+  <nav>
+    <a class = "op1" (click)="navigateToMisLibros()">Mis Libros</a>
+    <a class = "op2" (click)="navigateToCategorias()">Categorías</a>
+    <a class = "op3" (click)="navigateToSolicitud()">Solicitar libro</a> <!--SOLO USUARIO REGISTRADO-->
+    <a class = "op4" (click)="navigateToAdminSolicitudes()">Administar solicitudes</a> <!--SOLO ADMIN-->
+    <button class="login-btn" *ngIf="!logueado" (click)="navigateToIniciarSesion()">Inicia sesión</button>
+    <button class="login-btn" *ngIf="logueado" (click)="cerrarSesion()">Cerrar sesión</button>
+  </nav>
+</div>

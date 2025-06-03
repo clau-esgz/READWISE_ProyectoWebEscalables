@@ -1,0 +1,74 @@
+.tarjeta-solicitud {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-solicitud {
+  flex: 1;
+}
+
+.usuario h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.libro h4 {
+  margin: 0 0 8px 0;
+  color: #444;
+  font-size: 1.1em;
+}
+
+.fecha p {
+  margin: 0 0 8px 0;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.estado {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.estado-pendiente {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.estado-aprobada {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.estado-rechazada {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.acciones {
+  margin-left: 20px;
+}
+
+.btn-ver {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-ver:hover {
+  background-color: #0056b3;
+}

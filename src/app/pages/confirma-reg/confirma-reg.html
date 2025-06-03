@@ -1,0 +1,6 @@
+<app-encabezado></app-encabezado>
+<div class="confirma-reg-bg">
+  <h1 class="confirma-reg-title">Confirmar registro de libro</h1>
+  <app-form-libro [libroData]="libroData" [solicitudId]="solicitud._id" *ngIf="solicitud"></app-form-libro>
+</div>
+<app-pie-pag></app-pie-pag>

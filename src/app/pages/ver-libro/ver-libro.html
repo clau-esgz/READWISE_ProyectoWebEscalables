@@ -1,0 +1,9 @@
+<app-encabezado></app-encabezado>
+
+<div class="detalle-libro-container" *ngIf="libro">
+  <app-tarjeta-info [libro]="libro"></app-tarjeta-info>
+  <app-tarjeta-autor [autor]="autor"></app-tarjeta-autor>
+  <app-tarjeta-resena  [libroId]="libro._id || ''"></app-tarjeta-resena>
+</div>
+
+<app-pie-pag></app-pie-pag>

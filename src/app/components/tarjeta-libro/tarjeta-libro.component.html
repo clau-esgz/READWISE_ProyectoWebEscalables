@@ -1,0 +1,9 @@
+<div class="tarjeta-libro">
+  <img [src]="libro.portada" [alt]="libro.titulo" class="portada">
+  <div class="info">
+    <h3>{{ libro.titulo }}</h3>
+    
+    <button (click)="navigateToLibro(libro._id)" class="ver-btn">VER</button> 
+   
+  </div>
+</div>

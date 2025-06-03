@@ -1,0 +1,15 @@
+<div class="lista-libros">
+  <div class="tarjeta-libro" *ngFor="let libro of libros">
+    <img [src]="libro.portada" class="portada">
+    <div class="info">
+      <h3>{{ libro.titulo }}</h3>
+      <div>{{ libro.autor }}</div>
+      <div>{{ libro.ISBN }}</div>
+      <div>{{ libro.fecha_publicacion }}</div>
+    </div>
+    <div class="acciones">
+      <button class="marcar" (click)="marcarLeido(libro._id)">MARCAR COMO LEÍDO</button>
+      <button (click)="navigateToLibro(libro._id)" class="ver">VER</button> 
+    </div>
+  </div>
+</div>

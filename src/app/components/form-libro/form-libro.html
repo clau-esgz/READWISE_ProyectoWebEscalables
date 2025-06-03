@@ -1,0 +1,82 @@
+<div class="form-libro-container">
+  <form class="form-libro-form" (ngSubmit)="onSubmit()" #libroForm="ngForm">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="ISBN">ISBN</label>
+        <input id="ISBN" name="ISBN" type="text" class="form-libro-input" placeholder="ISBN"
+               [(ngModel)]="formData.ISBN" required #isbn="ngModel">
+        <div *ngIf="enviado && isbn.invalid" class="error">Campo requerido</div>
+      </div>
+      <div class="form-group">
+        <label for="titulo">Título</label>
+        <input id="titulo" name="titulo" type="text" class="form-libro-input" placeholder="Título"
+               [(ngModel)]="formData.titulo" required #titulo="ngModel" [readonly]="libroData.titulo">
+        <div *ngIf="enviado && titulo.invalid" class="error">Campo requerido</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="autor">Autor</label>
+        <select id="autor" name="autor" class="form-libro-input"
+                [(ngModel)]="formData.autor" required #autor="ngModel">
+          <option value="" selected>Selecciona un autor</option>
+          <option *ngFor="let autor of autores" [value]="autor._id">{{ autor.nombre }}</option>
+        </select>
+        <div *ngIf="enviado && autor.invalid" class="error">Selecciona un autor</div>
+      </div>
+      <div class="form-group">
+        <label for="editorial">Editorial</label>
+        <input id="editorial" name="editorial" type="text" class="form-libro-input" placeholder="Editorial"
+               [(ngModel)]="formData.editorial" required #editorial="ngModel" [readonly]="libroData.editorial">
+        <div *ngIf="enviado && editorial.invalid" class="error">Campo requerido</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="genero">Género</label>
+        <select id="genero" name="genero" class="form-libro-input"
+                [(ngModel)]="formData.categoria" required #genero="ngModel" >
+          <option value="" disabled selected>Selecciona un género</option>
+          <option *ngFor="let cat of categorias" [value]="cat._id">{{cat.genero}}</option>
+        </select>
+        <div *ngIf="enviado && genero.invalid" class="error">Selecciona un género</div>
+      </div>
+      <div class="form-group">
+        <label for="numero_paginas">No. páginas</label>
+        <input id="numero_paginas" name="numero_paginas" type="number" min="1" class="form-libro-input" 
+               placeholder="Número de páginas" [(ngModel)]="formData.numero_paginas" required #numero_paginas="ngModel">
+        <div *ngIf="enviado && numero_paginas.invalid" class="error">Campo requerido</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group full-width">
+        <label for="sinopsis">Sinopsis</label>
+        <textarea id="sinopsis" name="sinopsis" class="form-libro-input" placeholder="Sinopsis"
+                  [(ngModel)]="formData.sinopsis" required #sinopsis="ngModel"></textarea>
+        <div *ngIf="enviado && sinopsis.invalid" class="error">Campo requerido</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="portada">Portada (URL)</label>
+        <input id="portada" name="portada" type="url" class="form-libro-input" placeholder="URL de la portada"
+               [(ngModel)]="formData.portada" required #portada="ngModel">
+        <div *ngIf="enviado && portada.invalid" class="error">Campo requerido</div>
+      </div>
+      <div class="form-group">
+        <label for="fecha_publicacion">Fecha de publicación</label>
+        <input id="fecha_publicacion" name="fecha_publicacion" type="date" class="form-libro-input"
+               [(ngModel)]="formData.fecha_publicacion" required #fecha_publicacion="ngModel">
+        <div *ngIf="enviado && fecha_publicacion.invalid" class="error">Campo requerido</div>
+      </div>
+    </div>
+
+    <div *ngIf="errorMensaje" class="error">{{errorMensaje}}</div>
+
+    <button type="submit" class="btn-confirmar" [disabled]="!libroForm.form.valid">Confirmar registro</button>
+  </form>
+</div>

@@ -1,0 +1,13 @@
+<app-encabezado></app-encabezado>
+
+<div class="categorias-container">
+  <h1>Categorías</h1>
+  <div class="categorias-grid">
+    <app-tarjeta-categoria
+      *ngFor="let categoria of categorias"
+      [categoria]="categoria">
+    </app-tarjeta-categoria>
+  </div>
+</div>
+
+<app-pie-pag></app-pie-pag>

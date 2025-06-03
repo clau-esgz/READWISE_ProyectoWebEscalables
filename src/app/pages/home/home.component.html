@@ -1,0 +1,18 @@
+<app-encabezado></app-encabezado>
+
+<!-- Banner de libros -->
+<div class="banner">
+  <img src="https://tm.ibxk.com.br/2023/12/22/22145913653219.jpg?ims=1280x480" alt="Banner de libros" class="banner-img">
+</div>
+
+<!-- Grid de tarjetas de libros -->
+<div class="books-container">
+  <div class="books-grid">
+    <app-tarjeta-libro
+      *ngFor="let libro of librosFiltrados"
+      [libro]="libro">
+    </app-tarjeta-libro>
+  </div>
+</div>
+
+<app-pie-pag></app-pie-pag>

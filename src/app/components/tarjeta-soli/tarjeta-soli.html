@@ -1,0 +1,17 @@
+<div class="tarjeta-solicitud">
+  <div class="info-solicitud">
+    <div class="libro">
+      <h4>Libro solicitado: {{ solicitud.titulo }}</h4>
+    </div>
+  </div>
+  <div class="tarjeta-soli-info" *ngIf="solicitud">
+    <div class="tarjeta-soli-detalle"><span>Autor:</span> {{ solicitud.autor.nombre }}</div>
+    <div class="tarjeta-soli-detalle"><span>Editorial:</span> {{solicitud.editorial}}</div>
+    <div class="tarjeta-soli-detalle"><span>Categoría:</span> {{solicitud.categoria.genero}}</div>
+  </div>
+  <div class="acciones">
+    <button (click)="navigateToConfirmarSolicitud()" class="btn-ver">
+      Ver Detalles
+    </button>
+  </div>
+</div>

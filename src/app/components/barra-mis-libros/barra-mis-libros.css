@@ -1,0 +1,25 @@
+.barra-mis-libros {
+  display: flex;
+  margin: 32px 0 24px 0;
+}
+.barra-mis-libros button {
+  flex: 1;
+  padding: 18px 0;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #eee;
+  color: #222;
+  transition: background 0.2s, color 0.2s;
+}
+.barra-mis-libros button.activo {
+  background: #f94e9b;
+  color: #fff;
+}
+.barra-mis-libros button:nth-child(2).activo {
+  background: #ff8c1a;
+}
+.barra-mis-libros button:nth-child(3).activo {
+  background: #7ac943;
+}

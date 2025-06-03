@@ -1,0 +1,17 @@
+<div class="barra-mis-libros">
+  <button
+    [class.activo]="tabActivo === 'quiero-leer'"
+    (click)="cambiar('quiero-leer')">
+    Quiero leer
+  </button>
+  <button
+    [class.activo]="tabActivo === 'leidos'"
+    (click)="cambiar('leidos')">
+    Leídos
+  </button>
+  <button
+    [class.activo]="tabActivo === 'resenados'"
+    (click)="cambiar('resenados')">
+    Reseñados
+  </button>
+</div>

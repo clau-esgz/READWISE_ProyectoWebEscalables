@@ -1,0 +1,30 @@
+<div class="tarjeta-info">
+  <img [src]="libro?.portada" alt="Portada del libro" class="portada">
+  <div class="info">
+    <h1>{{ libro?.titulo }}</h1>
+    <h3>Sinopsis</h3>
+    <p>{{ libro?.sinopsis }}</p>
+    <div class="botones">
+      <button
+        [disabled]="estado === 'leido'"
+        (click)="marcarLeido()"
+        class="btn-leido">
+        Marcar como leído
+      </button>
+      <button
+        [disabled]="estado === 'quiero-leer'"
+        (click)="marcarQuieroLeer()"
+        class="btn-quiero-leer">
+        Quiero leer
+      </button>
+    </div>
+    <div class="estrellas">
+      <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
+        <span [class.filled]="i < promedioCalificacion">★</span>
+      </ng-container>
+      <span class="review-count" *ngIf="resenas.length > 0">
+        ({{ resenas.length }} reseña{{ resenas.length !== 1 ? 's' : '' }})
+      </span>
+    </div>
+  </div>
+</div>

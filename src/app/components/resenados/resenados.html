@@ -1,0 +1,21 @@
+<div class="lista-resenas">
+  <div class="tarjeta-resena" *ngFor="let resena of resenas">
+    <div class="libro-info">
+      <img [src]="resena.libro.portada" class="portada" [alt]="resena.libro.titulo">
+      <div class="info">
+        <h3>{{ resena.libro.titulo }}</h3>
+        <div class="autor">{{ resena.libro.autor }}</div>
+        <div class="calificacion">
+          <span *ngFor="let star of getStars(resena.calificacion)" class="estrella">{{ star }}</span>
+          <span class="numero-calificacion">({{ resena.calificacion }}/5)</span>
+        </div>
+        <div class="comentario">{{ resena.contenido }}</div>
+        <div class="fecha">{{ resena.fecha }}</div>
+      </div>
+    </div>
+    <div class="acciones">
+      <button (click)="navigateToLibro(resena.libro._id)" class="ver">VER LIBRO</button>
+    </div>
+  </div>
+</div>
+  

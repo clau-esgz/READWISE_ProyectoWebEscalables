@@ -1,0 +1,35 @@
+.tarjeta-autor {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  padding: 28px 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  margin-bottom: 32px;
+  gap: 24px;
+}
+
+.tarjeta-autor .foto-autor {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3bb89f;
+  margin-right: 18px;
+}
+
+.tarjeta-autor .info-autor {
+  flex: 1;
+}
+
+.tarjeta-autor h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.tarjeta-autor p {
+  font-size: 1rem;
+  color: #222;
+  margin: 0;
+}

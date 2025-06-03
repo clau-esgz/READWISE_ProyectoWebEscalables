@@ -1,0 +1,144 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f5faff;
+  padding: 12px 40px;
+  box-shadow: 0 2px 8px #0001;
+}
+
+.logo {
+
+  height: 60px;
+  width: 70px;
+  margin-right:50px;
+  margin-left: 0px;
+}
+
+.logo:hover{
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.search {
+  width: 200px;
+  padding: 7px 12px;
+  border: 1px solid #bcd;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+  margin-right: 0;
+}
+
+.search-btn {
+  margin-right:100px;
+  background: #2d88d3;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  color: #fff;
+  padding: 7px 16px;
+  cursor: pointer;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background: #1769aa;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  flex: 1;
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: #2196f3;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.login-btn {
+  background-color: #07090c;
+  font-size: 12px;
+  font-family: sans-serif;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+  margin-left: 300px;
+}
+
+.login-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.op1:hover {
+  color: #d35a73;
+  cursor: pointer;
+}
+
+.op2:hover {
+  color: #e87544;
+  cursor: pointer;
+}
+
+.op3:hover {
+  color: #6775d2;
+  cursor: pointer;
+} 
+
+.op4:hover {
+  color: #e4ba4f;
+  cursor: pointer;
+} 
+
+.mensaje-exito {
+  color: #b71c1c;
+  background: #ffebee;
+  border: 1px solid #d32f2f;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mensaje-error {
+  color: #b71c1c;
+  background: #ffebee;
+  border: 1px solid #d32f2f;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+

@@ -1,0 +1,41 @@
+<div class="form-container">
+  <form class="solicitud-form" (ngSubmit)="onSubmit()">
+    <h2>Ingresa aqui la información del libro</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Name" required
+               [(ngModel)]="formData.nombre" #nombre="ngModel">
+        <div *ngIf="enviado && !formData.nombre" class="error">Campo requerido</div>
+      </div>
+      <div class="form-group">
+        <label for="autor">Autor</label>
+        <select id="autor" name="autor" class="form-libro-input"
+                [(ngModel)]="formData.autor" required>
+          <option value="" disabled selected>Selecciona un autor</option>
+          <option *ngFor="let autor of autores" [value]="autor._id">{{ autor.nombre }}</option>
+        </select>
+        <div *ngIf="enviado && !formData.autor" class="error">Selecciona un autor</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Categoría</label>
+        <div class="radio-group">
+          <label *ngFor="let cat of categorias">
+            <input type="radio" name="categoria" [value]="cat._id"
+                   [(ngModel)]="formData.categoria" required>
+            {{ cat.genero }}
+          </label>
+        </div>
+        <div *ngIf="enviado && !formData.categoria" class="error">Selecciona una categoría</div>
+      </div>
+      <div class="form-group">
+        <label for="editorial">Editorial</label>
+        <input id="editorial" name="editorial" type="text" placeholder="Editorial"
+               [(ngModel)]="formData.editorial">
+      </div>
+    </div>
+    <button type="submit" class="btn-solicitar" [disabled]="!esValido()">Solicitar</button>
+  </form>
+</div>

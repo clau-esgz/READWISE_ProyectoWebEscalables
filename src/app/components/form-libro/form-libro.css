@@ -1,0 +1,60 @@
+.form-libro-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 32px 40px 24px 40px;
+  max-width: 700px;
+  margin: 40px auto 60px auto;
+}
+.form-libro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.form-row {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 0;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 180px;
+}
+.form-group label {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: #222b45;
+  font-weight: 600;
+}
+.form-libro-input {
+  padding: 8px 12px;
+  border: 1px solid #bcd;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  background: #f9f9f9;
+}
+textarea.form-libro-input {
+  min-height: 60px;
+  resize: vertical;
+}
+.full-width {
+  flex: 1 1 100%;
+}
+.btn-confirmar {
+  background: #222b45;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-confirmar:hover {
+  background: #4caf50;
+}

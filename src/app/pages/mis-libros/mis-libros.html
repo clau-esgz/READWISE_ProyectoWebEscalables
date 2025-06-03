@@ -1,0 +1,14 @@
+<app-encabezado></app-encabezado>
+
+<div class="mis-libros-container">
+  <app-barra-mis-libros
+    [tabActivo]="tabActivo"
+    (cambiarTab)="tabActivo = $event">
+  </app-barra-mis-libros>
+
+  <app-quiero-leer *ngIf="tabActivo === 'quiero-leer'"></app-quiero-leer>
+  <app-leidos *ngIf="tabActivo === 'leidos'"></app-leidos>
+  <app-resenados *ngIf="tabActivo === 'resenados'"></app-resenados>
+</div>
+
+<app-pie-pag></app-pie-pag>

@@ -1,0 +1,35 @@
+.tarjeta-categoria {
+  position: relative;
+  width: 270px;
+  height: 270px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.tarjeta-categoria:hover {
+  transform: scale(1.03);
+}
+.img-categoria {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+}
+.nombre-categoria {
+  position: absolute;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  margin-bottom: 12px;
+}

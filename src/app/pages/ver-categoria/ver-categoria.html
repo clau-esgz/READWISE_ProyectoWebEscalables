@@ -1,0 +1,17 @@
+<app-encabezado></app-encabezado>
+
+<div class="banner">
+  <img [src]="categoriaDetalle?.portada" alt="Banner de libros" class="banner-img">
+  <div class="banner-titulo" *ngIf="categoriaDetalle?.genero">{{ categoriaDetalle?.genero }}</div>
+</div>
+
+<div class="books-container">
+  <div class="books-grid">
+    <app-tarjeta-libro
+      *ngFor="let libro of libros"
+      [libro]="libro">
+    </app-tarjeta-libro>
+  </div>
+</div>
+
+<app-pie-pag></app-pie-pag>
